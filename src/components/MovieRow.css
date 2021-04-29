@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #FFF;
+    margin: 0;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.movieRow {
+    margin-bottom: 0.5rem;
+}
+
+.movieRow h2 {
+    margin: 0 0 0 2rem;
+}
+
+.movieRow--listarea{
+    overflow-x: hidden;
+}
+
+.movieRow--list{
+    width: %;
+}
+.movieRow--item{
+    display: inline-block;
+}

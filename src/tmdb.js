@@ -1,5 +1,5 @@
 const API_KEY = 'a1b2f514b71b98f4fdeabd6fae26bd24';
-const API_BASE = 'https://api.themoviedb.org/3/';
+const API_BASE = 'https://api.themoviedb.org/3';
 
 /*
 - originals
@@ -28,7 +28,7 @@ export default {
             },
             {
                 slug: 'trending',
-                title: 'Your recommendations',
+                title: 'Your Recommendations',
                 items: await getData(`/trending/all/week?api_key=${API_KEY}`)
             },
             {
@@ -39,27 +39,27 @@ export default {
             {
                 slug: 'action',
                 title: 'Action',
-                items: await getData(`/discover/movie/with_genres_28&api_key=${API_KEY}`)
+                items: await getData(`/discover/movie?with_genres=28&api_key=${API_KEY}`)
             },
             {
                 slug: 'comedy',
                 title: 'Comedy',
-                items: await getData(`/discover/movie/with_genres_35&api_key=${API_KEY}`)
+                items: await getData(`/discover/movie?with_genres=35&api_key=${API_KEY}`)
             },
             {
                 slug: 'horror',
                 title: 'Horror',
-                items: await getData(`/discover/movie/with_genres_27&api_key=${API_KEY}`)
+                items: await getData(`/discover/movie?with_genres=27&api_key=${API_KEY}`)
             },
             {
                 slug: 'romance',
                 title: 'Romance',
-                items: await getData(`/discover/movie/with_genres_10749&api_key=${API_KEY}`)
+                items: await getData(`/discover/movie?with_genres=10749&api_key=${API_KEY}`)
             },
             {
                 slug: 'documentary',
                 title: 'Documentaries',
-                items: await getData(`/discover/movie/with_genres_99&api_key=${API_KEY}`)
+                items: await getData(`/discover/movie?with_genres=99&api_key=${API_KEY}`)
             },
         ];
     }
