@@ -62,5 +62,22 @@ export default {
                 items: await getData(`/discover/movie?with_genres=99&api_key=${API_KEY}`)
             },
         ];
+    },
+    getMovieInfo: async (itemId, type) => {
+        let info = {};
+
+        if(itemId) {
+            switch(type) {
+                case 'movie': 
+                    info = await getData(`/movie/${itemId}?api_key=${API_KEY}`);
+                break;
+
+                case 'tv':
+                    info = await getData(`/tv/${itemId}?api_key=${API_KEY}`);
+                break;
+            }
+        }
+        return info;
+        
     }
 }

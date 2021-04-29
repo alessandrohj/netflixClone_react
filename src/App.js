@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import './components/MovieRow.css'
 import Tmdb from './tmdb.js';
 import MovieRow from './components/MovieRow.js'
-import featuredMovie from './components/featuredMovie.js'
+import FeaturedMovie from './components/FeaturedMovie.js'
 
 export default () => {
 
@@ -18,7 +18,8 @@ setMovieList(list);
       let originals = list.filter(i=>i.slug === 'originals');
       const randomSelection = Math.floor(Math.random() * (originals[0].items.results.length - 1));
       let selected = originals[0].items.results[randomSelection];
-
+      let selectedInfo = await Tmdb.getMovieInfo(selected.id, 'tv');
+      setFeatureData(selectedInfo); //add data to page
 
     }
     loadAll();
@@ -28,7 +29,7 @@ setMovieList(list);
     <div className="page">
  
  {featuredData &&
-     <featuredMovie item={featuredData} />
+     <FeaturedMovie item={featuredData} />
  }
 
 
