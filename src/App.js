@@ -67,6 +67,14 @@ useEffect(()=>{
        Created using TheMovieDB.org API. <br/>
        Image rights belongs to Netflix.
      </footer>
+
+      {movieList <= 0 &&
+     <div className='loading'>
+       <img src='https://cdn.lowgif.com/small/0534e2a412eeb281-the-counterintuitive-tech-behind-netflix-s-worldwide.gif"' alt='loading'/>
+
+     </div>
+      }
+
     </div>
   );
 }
